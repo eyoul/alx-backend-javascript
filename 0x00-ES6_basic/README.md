@@ -104,7 +104,8 @@ bob@dylan:~$
 * [3-default-parameter.js](./3-default-parameter.js):Condense the internals of the following function to 1 line - without changing the name of each function/variable.
 
 Hint: The key here to define default parameter values for the function parameters.
-
+````
+```
 export default function getSumOfHoods(initialNumber, expansion1989, expansion2019) {
   if (expansion1989 === undefined) {
     expansion1989 = 89;
@@ -129,8 +130,11 @@ bob@dylan:~$ npm run dev 3-main.js
 56
 41
 bob@dylan:~$
+```
+````
 * [4-rest-parameter.js](./4-rest-parameter.js):Modify the following function to return the number of arguments passed to it using the rest parameter syntax
-
+````
+```
 export default function returnHowManyArguments() {
 
 }
@@ -151,8 +155,11 @@ bob@dylan:~$ npm run dev 4-main.js
 1
 4
 bob@dylan:~$
+```
+````
 * [5-spread-operator.js](./5-spread-operator.js):Using spread syntax, concatenate 2 arrays and each character of a string by modifying the function below. Your function body should be one line long.
-
+````
+```
 export default function concatArrays(array1, array2, string) {
 }
 Execution:
@@ -170,9 +177,11 @@ bob@dylan:~$ npm run dev 5-main.js
   'l', 'l', 'o'
 ]
 bob@dylan:~$
+```
+````
 * [6-string-interpolation.js](./6-string-interpolation.js):Rewrite the return statement to use a template literal so you can the substitute the variables you’ve defined.
-
-export default function getSanFranciscoDescription() {
+````
+```export default function getSanFranciscoDescription() {
   const year = 2017;
   const budget = {
     income: '$119,868',
@@ -195,10 +204,13 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 6-main.js 
 As of 2017, it was the seventh-highest income county in the United States, with a per capita personal income of $119,868. As of 2015, San Francisco proper had a GDP of $154.2 billion, and a GDP per capita of $178,479.
 bob@dylan:~$
+```
+````
 * [7-getBudgetObject.js](./7-getBudgetObject.js):Notice how the keys and the variable names are the same?
 
 Modify the following function’s budget object to simply use the keyname instead.
-
+````
+```
 export default function getBudgetObject(income, gdp, capita) {
   const budget = {
     income: income,
@@ -219,8 +231,11 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 7-main.js 
 { income: 400, gdp: 700, capita: 900 }
 bob@dylan:~$
+```
+````
 * [8-getBudgetCurrentYear.js](./8-getBudgetCurrentYear.js):Rewrite the getBudgetForCurrentYear function to use ES6 computed property names on the budget object
-
+````
+```
 function getCurrentYear() {
   const date = new Date();
   return date.getFullYear();
@@ -246,10 +261,13 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 8-main.js 
 { 'income-2021': 2100, 'gdp-2021': 5200, 'capita-2021': 1090 }
 bob@dylan:~$
+```
+````
 * [9-getFullBudget.js](./9-getFullBudget.js):Rewrite getFullBudgetObject to use ES6 method properties in the fullBudget object
 
 import getBudgetObject from './7-getBudgetObject.js';
-
+````
+```
 export default function getFullBudgetObject(income, gdp, capita) {
   const budget = getBudgetObject(income, gdp, capita);
   const fullBudget = {
@@ -279,8 +297,11 @@ bob@dylan:~$ npm run dev 9-main.js
 $20
 20 euros
 bob@dylan:~$
+```
+````
 * [10-loops.js](./10-loops.js):Rewrite the function appendToEachArrayValue to use ES6’s for...of operator. And don’t forget that var is not ES6-friendly.
-
+````
+```
 export default function appendToEachArrayValue(array, appendString) {
   for (var idx in array) {
     var value = array[idx];
@@ -300,9 +321,12 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 10-main.js 
 [ 'correctly-appended', 'correctly-fixed', 'correctly-displayed' ]
 bob@dylan:~$
+```
+````
 * [11-createEmployeesObject.js](./11-createEmployeesObject.js):
 Write a function named createEmployeesObject that will receive two arguments:
-
+````
+```
 departmentName (String)
 employees (Array of Strings)
 export default function createEmployeesObject(departmentName, employees) {
@@ -326,9 +350,11 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 11-main.js 
 { Software: [ 'Bob', 'Sylvie' ] }
 bob@dylan:~$
-
+```
+````
 * [12-createReportObject.js](./12-createReportObject.js):Write a function named createReportObject whose parameter, employeesList, is the return value of the previous function createEmployeesObject.
-
+````
+```
 export default function createReportObject(employeesList) {
 
 }
@@ -366,11 +392,14 @@ bob@dylan:~$ npm run dev 12-main.js
 { engineering: [ 'Bob', 'Jane' ], marketing: [ 'Sylvie' ] }
 2
 bob@dylan:~$
+```
+````
 * [100-createIteratorObject.js](./100-createIteratorObject.js):
 Write a function named createIteratorObject, that will take into argument a report Object created with the previous function createReportObject.
 
 This function will return an iterator to go through every employee in every department.
-
+````
+```
 export default function createIteratorObject(report) {
 
 }
@@ -401,8 +430,11 @@ Bob
 Jane
 Sylvie
 bob@dylan:~$
+```
+````
 * [101-iterateThroughObject.js](./101-iterateThroughObject.js):Finally, write a function named iterateThroughObject. The function’s parameter reportWithIterator is the return value from createIteratorObject.
-
+````
+```
  export default function iterateThroughObject(reportWithIterator) {
 
  }
@@ -456,3 +488,5 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 101-main.js 
 Bob | Jane | Sylvie
 bob@dylan:~$
+```
+````
