@@ -9,6 +9,4 @@ export default function getBudgetForCurrentYear(income, gdp, capita) {
     [`gdp-${getCurrentYear()}`]: gdp,
     [`capita-${getCurrentYear()}`]: capita,
   };
-    [`capita-${getCurrentYear()}`]: capita
- };
 }
