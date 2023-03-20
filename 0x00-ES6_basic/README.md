@@ -13,11 +13,12 @@
 -Iterators and for-of loops
 ## Tasks
 
-* **0. Sky is the limit, let's bring that limit higher**
 * [0-constants.js](./0-constants.js):Modify
 
 function taskFirst to instantiate variables using const
 function taskNext to instantiate variables using let
+````
+```
 export function taskFirst() {
   var task = 'I prefer const when I can.';
   return task;
@@ -44,8 +45,11 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 0-main.js 
 I prefer const when I can. But sometimes let is okay
 bob@dylan:~$ 
+```
+````
 * [1-block-scoped.js](./1-block-scoped.js):Given what you’ve read about var and hoisting, modify the variables inside the function taskBlock so that the variables aren’t overwritten inside the conditional block.
-
+````
+```
 export default function taskBlock(trueOrFalse) {
   var task = false;
   var task2 = true;
@@ -69,8 +73,11 @@ bob@dylan:~$ npm run dev 1-main.js
 [ false, true ]
 [ false, true ]
 bob@dylan:~$
+```
+````
 * [2-arrow.js](./2-arrow.js):Rewrite the following standard function to use ES6’s arrow syntax of the function add (it will be an anonymous function after)
-
+````
+```
 export default function getNeighborhoodsList() {
   this.sanFranciscoNeighborhoods = ['SOMA', 'Union Square'];
 
@@ -92,6 +99,8 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 2-main.js 
 [ 'SOMA', 'Union Square', 'Noe Valley' ]
 bob@dylan:~$
+```
+````
 * [3-default-parameter.js](./3-default-parameter.js):Condense the internals of the following function to 1 line - without changing the name of each function/variable.
 
 Hint: The key here to define default parameter values for the function parameters.
