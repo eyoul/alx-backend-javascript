@@ -2,6 +2,4 @@
 .vscode/extensions.json
 .vscode/settings.json
 /node_modules/
-/package-lock.json
-package.json
-package.json
+
