@@ -8,6 +8,6 @@ export default function getListStudents() {
   return [
     createStudent( 1, 'Guillaume', 'San Francisco' ),
     createStudent( 2, 'James', 'Columbia' ),
-    createStudent( id: 5, 'Serena', 'San Francisco'),
+    createStudent( 5, 'Serena', 'San Francisco'),
     ];
 }
