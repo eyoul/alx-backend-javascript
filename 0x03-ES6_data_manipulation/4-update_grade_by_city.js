@@ -5,7 +5,7 @@ export default function updateStudentGradeByCity(arr, city, newGrades) {
       const grades = newGrades.filter((el) => el.studentId === person.id);
       const grade = grades.length ? grades[0].grade : 'N/A';
       return {
-        ... person,
+        ...person,
 	grade,
       };
     });
