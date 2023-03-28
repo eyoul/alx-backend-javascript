@@ -1,6 +1,10 @@
-export default function hasValuesFromArray(set, arr) {
-  for (const el of arr){
-    if (!set.has(el)) return false;
+export default function cleanSet(set, startString) {
+  let res = '';
+  if (!startString || !startString.length) return res;
+  for (const el of set) {
+    if (el && el.startsWith(startString)) {
+      res += `${el.slice(startString.length)}-`;
+    }
   }
-  return true;
+  return res.slice(0, res.length - 1);
 }
