@@ -22,7 +22,10 @@ interface printTeacherFunction {
 
 const printTeacher: printTeacherFunction = (firstName: string, lastName: string ): string => `${firstName.charAt(0)}. ${lastName}`;
 // Task_4 Writing a class
-
+interface classInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
 class StudentClass implements classInterface {
   firstName: string;
   lastName: string;
