@@ -485,3 +485,7 @@ bob@dylan:~$ npm run dev 100-main.js
 bob@dylan:~$ 
 ```
 File: [100-weak.js](./100-weak.js)
+
+### Authors &copy;
+
+- Eyoul Shimeles
