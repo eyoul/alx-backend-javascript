@@ -583,3 +583,7 @@ Car { _brand: undefined, _motor: undefined, _color: undefined }
 bob@dylan:~$ 
 ```
 File: [100-evcar.js](./100-evcar.js)
+
+### Authors &copy;
+
+- Eyoul Shimeles
