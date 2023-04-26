@@ -1,3 +1,2 @@
-
 Short Specializations
 
