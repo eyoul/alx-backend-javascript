@@ -473,3 +473,7 @@ Create two functions named sumMajorCredits and sumMinorCredits in task_5/js/main
 * Each function sums the credits of the two subjects
 
 File: [main.ts](./task_5/js/main.ts), [package.json](./task_5/package.json), [webpack.config.js](./task_5/webpack.config.js), [tsconfig.json](./task_5/tsconfig.json)
+
+### Authors &copy;
+
+- Eyoul Shimeles
