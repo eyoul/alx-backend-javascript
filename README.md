@@ -1,2 +1,6 @@
-Short Specializations
+# Short Specializations
+
+### Authors &copy;
+
+- Eyoul Shimeles
 
