@@ -11,14 +11,141 @@
 -String templating in ES6
 -Object creation and their properties in ES6
 -Iterators and for-of loops
+# Resources
+  # Read or watch:
+
+* [ECMAScript 6 - ECMAScript 2015](https://www.w3schools.com/js/js_es6.asp)
+* [Statements and declarations](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements)
+* [Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+* [Default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+* [Rest parameter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+* [Javascript ES6 — Iterables and Iterators](https://towardsdatascience.com/javascript-es6-iterables-and-iterators-de18b54f4d4?gi=8c21a4e67f0d)
+
+# Requirements
+## General
+* All your files will be executed on Ubuntu 18.04 LTS using NodeJS 12.11.x
+* Allowed editors: vi, vim, emacs, Visual Studio Code
+* All your files should end with a new line
+* A README.md file, at the root of the folder of the project, is mandatory
+* Your code should use the js extension
+* Your code will be tested using the [Jest Testing Framework](https://jestjs.io/)
+* Your code will be analyzed using the linter [ESLint](https://eslint.org/) along with specific rules that we’ll provide
+* All of your functions must be exported
+# Setup
+## Install NodeJS 12.11.x
+(in your home directory):
+```powershell
+curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+sudo bash nodesource_setup.sh
+sudo apt install nodejs -y
+```
+```powershell
+$ nodejs -v
+v12.11.1
+$ npm -v
+6.11.3
+```
+# Install Jest, Babel, and ESLint
+in your project directory:
+
+* Install Jest using: npm install --save-dev jest
+* Install Babel using: npm install --save-dev babel-jest @babel/core @babel/preset-env
+* Install ESLint using: npm install --save-dev eslint
+
+# Configuration files
+package.json
+[Click to show/hide file contents](
+  ```powershell
+  {
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint",
+    "check-lint": "lint [0-9]*.js",
+    "dev": "npx babel-node",
+    "test": "jest",
+    "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.8.0",
+    "@babel/preset-env": "^7.6.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
+    "jest": "^24.9.0"
+  }
+}
+```
+)
+babel.config.js
+[Click to show/hide file contents
+](
+  ```powershell
+  module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          node: 'current',
+        },
+      },
+    ],
+  ],
+};
+  ```
+)
+[.eslintrc.js
+Click to show/hide file contents](
+  ```powershell
+  module.exports = {
+  env: {
+    browser: false,
+    es6: true,
+    jest: true,
+  },
+  extends: [
+    'airbnb-base',
+    'plugin:jest/all',
+  ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  plugins: ['jest'],
+  rules: {
+    'no-console': 'off',
+    'no-shadow': 'off',
+    'no-restricted-syntax': [
+      'error',
+      'LabeledStatement',
+      'WithStatement',
+    ],
+  },
+  overrides:[
+    {
+      files: ['*.js'],
+      excludedFiles: 'babel.config.js',
+    }
+  ]
+};
+  ```
+)
+Finally…
+Don’t forget to run npm install from the terminal of your project folder to install all necessary project dependencies.
+
+
 ## Tasks
 
 * [0-constants.js](./0-constants.js):Modify
 
 function taskFirst to instantiate variables using const
 function taskNext to instantiate variables using let
-````
-```
+```powershell
 export function taskFirst() {
   var task = 'I prefer const when I can.';
   return task;
@@ -46,10 +173,8 @@ bob@dylan:~$ npm run dev 0-main.js
 I prefer const when I can. But sometimes let is okay
 bob@dylan:~$ 
 ```
-````
 * [1-block-scoped.js](./1-block-scoped.js):Given what you’ve read about var and hoisting, modify the variables inside the function taskBlock so that the variables aren’t overwritten inside the conditional block.
-````
-```
+```powershell
 export default function taskBlock(trueOrFalse) {
   var task = false;
   var task2 = true;
@@ -74,10 +199,8 @@ bob@dylan:~$ npm run dev 1-main.js
 [ false, true ]
 bob@dylan:~$
 ```
-````
 * [2-arrow.js](./2-arrow.js):Rewrite the following standard function to use ES6’s arrow syntax of the function add (it will be an anonymous function after)
-````
-```
+```powershell
 export default function getNeighborhoodsList() {
   this.sanFranciscoNeighborhoods = ['SOMA', 'Union Square'];
 
@@ -100,12 +223,11 @@ bob@dylan:~$ npm run dev 2-main.js
 [ 'SOMA', 'Union Square', 'Noe Valley' ]
 bob@dylan:~$
 ```
-````
 * [3-default-parameter.js](./3-default-parameter.js):Condense the internals of the following function to 1 line - without changing the name of each function/variable.
 
 Hint: The key here to define default parameter values for the function parameters.
-````
-```
+
+```powershell
 export default function getSumOfHoods(initialNumber, expansion1989, expansion2019) {
   if (expansion1989 === undefined) {
     expansion1989 = 89;
@@ -131,10 +253,10 @@ bob@dylan:~$ npm run dev 3-main.js
 41
 bob@dylan:~$
 ```
-````
+
 * [4-rest-parameter.js](./4-rest-parameter.js):Modify the following function to return the number of arguments passed to it using the rest parameter syntax
-````
-```
+
+```powershell
 export default function returnHowManyArguments() {
 
 }
@@ -156,10 +278,10 @@ bob@dylan:~$ npm run dev 4-main.js
 4
 bob@dylan:~$
 ```
-````
+
 * [5-spread-operator.js](./5-spread-operator.js):Using spread syntax, concatenate 2 arrays and each character of a string by modifying the function below. Your function body should be one line long.
-````
-```
+
+```powershell
 export default function concatArrays(array1, array2, string) {
 }
 Execution:
@@ -178,10 +300,11 @@ bob@dylan:~$ npm run dev 5-main.js
 ]
 bob@dylan:~$
 ```
-````
+
 * [6-string-interpolation.js](./6-string-interpolation.js):Rewrite the return statement to use a template literal so you can the substitute the variables you’ve defined.
-````
-```export default function getSanFranciscoDescription() {
+
+```powershell
+export default function getSanFranciscoDescription() {
   const year = 2017;
   const budget = {
     income: '$119,868',
@@ -205,12 +328,12 @@ bob@dylan:~$ npm run dev 6-main.js
 As of 2017, it was the seventh-highest income county in the United States, with a per capita personal income of $119,868. As of 2015, San Francisco proper had a GDP of $154.2 billion, and a GDP per capita of $178,479.
 bob@dylan:~$
 ```
-````
+
 * [7-getBudgetObject.js](./7-getBudgetObject.js):Notice how the keys and the variable names are the same?
 
 Modify the following function’s budget object to simply use the keyname instead.
-````
-```
+
+```powershell
 export default function getBudgetObject(income, gdp, capita) {
   const budget = {
     income: income,
@@ -232,10 +355,10 @@ bob@dylan:~$ npm run dev 7-main.js
 { income: 400, gdp: 700, capita: 900 }
 bob@dylan:~$
 ```
-````
+
 * [8-getBudgetCurrentYear.js](./8-getBudgetCurrentYear.js):Rewrite the getBudgetForCurrentYear function to use ES6 computed property names on the budget object
-````
-```
+
+```powershell
 function getCurrentYear() {
   const date = new Date();
   return date.getFullYear();
@@ -262,12 +385,12 @@ bob@dylan:~$ npm run dev 8-main.js
 { 'income-2021': 2100, 'gdp-2021': 5200, 'capita-2021': 1090 }
 bob@dylan:~$
 ```
-````
+
 * [9-getFullBudget.js](./9-getFullBudget.js):Rewrite getFullBudgetObject to use ES6 method properties in the fullBudget object
 
 import getBudgetObject from './7-getBudgetObject.js';
-````
-```
+
+```powershell
 export default function getFullBudgetObject(income, gdp, capita) {
   const budget = getBudgetObject(income, gdp, capita);
   const fullBudget = {
@@ -298,10 +421,10 @@ $20
 20 euros
 bob@dylan:~$
 ```
-````
+
 * [10-loops.js](./10-loops.js):Rewrite the function appendToEachArrayValue to use ES6’s for...of operator. And don’t forget that var is not ES6-friendly.
-````
-```
+
+```powershell
 export default function appendToEachArrayValue(array, appendString) {
   for (var idx in array) {
     var value = array[idx];
@@ -322,11 +445,11 @@ bob@dylan:~$ npm run dev 10-main.js
 [ 'correctly-appended', 'correctly-fixed', 'correctly-displayed' ]
 bob@dylan:~$
 ```
-````
+
 * [11-createEmployeesObject.js](./11-createEmployeesObject.js):
 Write a function named createEmployeesObject that will receive two arguments:
-````
-```
+
+```powershell
 departmentName (String)
 employees (Array of Strings)
 export default function createEmployeesObject(departmentName, employees) {
@@ -351,10 +474,10 @@ bob@dylan:~$ npm run dev 11-main.js
 { Software: [ 'Bob', 'Sylvie' ] }
 bob@dylan:~$
 ```
-````
+
 * [12-createReportObject.js](./12-createReportObject.js):Write a function named createReportObject whose parameter, employeesList, is the return value of the previous function createEmployeesObject.
-````
-```
+
+```powershell
 export default function createReportObject(employeesList) {
 
 }
@@ -393,13 +516,13 @@ bob@dylan:~$ npm run dev 12-main.js
 2
 bob@dylan:~$
 ```
-````
+
 * [100-createIteratorObject.js](./100-createIteratorObject.js):
 Write a function named createIteratorObject, that will take into argument a report Object created with the previous function createReportObject.
 
 This function will return an iterator to go through every employee in every department.
-````
-```
+
+```powershell
 export default function createIteratorObject(report) {
 
 }
@@ -431,10 +554,10 @@ Jane
 Sylvie
 bob@dylan:~$
 ```
-````
+
 * [101-iterateThroughObject.js](./101-iterateThroughObject.js):Finally, write a function named iterateThroughObject. The function’s parameter reportWithIterator is the return value from createIteratorObject.
-````
-```
+
+```powershell
  export default function iterateThroughObject(reportWithIterator) {
 
  }
@@ -489,7 +612,7 @@ bob@dylan:~$ npm run dev 101-main.js
 Bob | Jane | Sylvie
 bob@dylan:~$
 ```
-````
+
 ### Authors &copy;
 
 - Eyoul Shimeles
