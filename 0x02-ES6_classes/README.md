@@ -3,8 +3,8 @@
 # Resources
 ## Read or watch:
 
-* Classes
-* Metaprogramming
+* [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+* [Metaprogramming](https://www.keithcirkel.co.uk/metaprogramming-in-es6-symbols/#symbolspecies)
 
 # Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
