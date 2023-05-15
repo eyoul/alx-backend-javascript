@@ -138,7 +138,7 @@ module.exports = {
 ```
 **and…**
 Don’t forget to run $ npm install when you have the package.json
-**0. Executing basic javascript with Node JS**
+### 0. Executing basic javascript with Node JS
 In the file [0-console.js](./0-console.js), create a function named `displayMessage` that prints in `STDOUT` the string argument.
 ```powershell
 bob@dylan:~$ cat 0-main.js
@@ -151,7 +151,7 @@ Hello NodeJS!
 bob@dylan:~$
 ```
 * File: [0-console.js](./0-console.js)
-**1. Using Process stdin**
+### 1. Using Process stdin
 Create a program named `1-stdin.js` that will be executed through command line:
 
 It should display the message `Welcome to Holberton School, what is your name?` (followed by a new line)
@@ -174,7 +174,7 @@ This important software is now closing
 bob@dylan:~$ 
 ```
 * File: [1-stdin.js](./1-stdin.js)
-**2. Reading a file synchronously with Node JS**
+### 2. Reading a file synchronously with Node JS
 Using the database `database.csv` (provided in project description), create a function `countStudents` in the file [2-read_file.js](./2-read_file.js)
 
    * Create a function named `countStudents`. It should accept a path in argument
@@ -209,7 +209,7 @@ Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy
 bob@dylan:~$ 
 ```
 * File: [2-read_file.js](./2-read_file.js)
-**3. Reading a file asynchronously with Node JS**
+### 3. Reading a file asynchronously with Node JS
 Using the database `database.csv` (provided in project description), create a function `countStudents` in the file [3-read_file_async.js](./3-read_file_async.js)
 
   * Create a function named `countStudents`. It should accept a path in argument (same as in  [2-read_file.js](./2-read_file.js))
@@ -259,7 +259,7 @@ bob@dylan:~$
   * Using asynchronous callbacks is the preferred way to write code in Node to avoid blocking threads
 * File: [3-read_file_async.js](./3-read_file_async.js)
 
-**4. Create a small HTTP server using Node's HTTP module**
+### 4. Create a small HTTP server using Node's HTTP module
 In a file named [4-http.js](./4-http.js), create a small HTTP server using the `http` module:
 
 It should be assigned to the variable `app` and this one must be exported
@@ -281,7 +281,7 @@ bob@dylan:~$
 ```
 * File: [4-http.js](./4-http.js)
 
-**5. Create a more complex HTTP server using Node's HTTP module**
+### 5. Create a more complex HTTP server using Node's HTTP module
 In a file named [5-http.js](./5-http.js), create a small HTTP server using the `http` module:
 
   * It should be assigned to the variable app and this one must be exported
@@ -308,7 +308,7 @@ Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy
 bob@dylan:~$ 
 ```
 * File: [5-http.js](./5-http.js)
-**6. Create a small HTTP server using Express**
+### 6. Create a small HTTP server using Express
 Install Express and in a file named [6-http_express.js](./6-http_express.js), create a small HTTP server using Express module:
 
   * It should be assigned to the variable `app` and this one must be exported
@@ -338,7 +338,7 @@ bob@dylan:~$ curl localhost:1245/any_endpoint && echo ""
 bob@dylan:~$ 
 ```
 * File: [6-http_express.js](./6-http_express.js)
-**7. Create a more complex HTTP server using Express**
+### 7. Create a more complex HTTP server using Express
 In a file named [7-http_express.js](./7-http_express.js), recreate the small HTTP server using `Express`:
 
 It should be assigned to the variable app and this one must be exported
@@ -365,12 +365,12 @@ Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy
 bob@dylan:~$ 
 ```
 * File: [7-http_express.js](./7-http_express.js)
-**8. Organize a complex HTTP server using Express**
+### 8. Organize a complex HTTP server using Express
 Obviously writing every part of a server within a single file is not sustainable. Let’s create a full server in a directory named `full_server`.
 
 Since you have used ES6 and Babel in the past projects, let’s use `babel-node` to allow to use ES6 functions like import or `export`.
 
-**8.1 Organize the structure of the server**
+### 8.1 Organize the structure of the server
 * Create 2 directories within:
     * `controllers`
     * `routes`
@@ -380,12 +380,12 @@ Since you have used ES6 and Babel in the past projects, let’s use `babel-node`
     * When the file is not accessible, it should reject the promise with the error
     * When the file can be read, it should return an object of arrays of the firstname of students per fields
 
-**8.2 Write the App controller**
+### 8.2 Write the App controller
 Inside the file [full_server/controllers/AppController.js](./full_server/controllers/AppController.js):
 
    * Create a class named `AppController`. Add a static method named `getHomepage`
    * The method accepts `request` and `response` as argument. It returns a 200 status and the message `Hello Holberton School!`
-**8.3 Write the Students controller**
+### 8.3 Write the Students controller
 Inside the [file full_server/controllers/StudentsController.js](./full_server/controllers/StudentsController.js), create a class named `StudentsController`. Add two static methods:
 
 The first one is `getAllStudents`:
@@ -404,17 +404,17 @@ It should return a status 200
 It uses a parameter that the user can pass to the browser `major`. The `major` can only be `CS` or `SWE`. If the user is passing another parameter, the server should return a 500 and the error `Major parameter must be CS or SWE`
 It calls the function `readDatabase` from the `utils` file, and display in the page the list of first names for the students (ordered by appearance in the database file) in the specified field `List: LIST_OF_FIRSTNAMES_IN_THE_FIELD`
 If the database is not available, it should return a status 500 and the error message `Cannot load the database`
-**8.4 Write the routes**
+### 8.4 Write the routes
 Inside the file [full_server/routes/index.js](./full_server/routes/index.js):
 
    * Link the route `/` to the `AppController`
    * Link the route `/students` and `/students/:major` to the `StudentsController`
-**8.5 Write the server reusing everything you created**
+### 8.5 Write the server reusing everything you created
 Inside the file named [full_server/server.js](./full_server/server.js), create a small Express server:
 
    * It should use the routes defined in [full_server/routes/index.js](full_server/routes/index.js)
    * It should use the port `1245`
-**8.6 Update `package.json` (if you are running it from outside the folder `full_server`)**
+### 8.6 Update `package.json` (if you are running it from outside the folder `full_server`)
 If you are starting node from outside of the folder `full_server`, you will have to update the command `dev` by: `nodemon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv`
 
 **Warning**:
