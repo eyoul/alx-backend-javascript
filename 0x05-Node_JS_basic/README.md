@@ -32,8 +32,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 * Your code needs to pass all the tests and lint. You can verify the entire project running npm run full-test
 * All of your functions/classes must be exported by using this format: module.exports = myFunction;
 
-**Provided files**
-database.csv
+**Provided files database.csv**
 ```powershell
 firstname,lastname,age,field
 Johann,Kerbrou,30,CS
@@ -48,7 +47,7 @@ Tommy,Schoul,32,SWE
 Katie,Shirou,21,CS
 ```
 **package.json**
-```
+```powershell
 {
   "name": "node_js_basics",
   "version": "1.0.0",
@@ -82,8 +81,79 @@ Katie,Shirou,21,CS
 }
 
 ```
-
-
+**babel.config.js**
+```powershell
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          node: 'current',
+        },
+      },
+    ],
+  ],
+};
+```
+**.eslintrc.js**
+```powershell
+module.exports = {
+  env: {
+    browser: false,
+    es6: true,
+    jest: true,
+  },
+  extends: [
+    'airbnb-base',
+    'plugin:jest/all',
+  ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  plugins: ['jest'],
+  rules: {
+    'max-classes-per-file': 'off',
+    'no-underscore-dangle': 'off',
+    'no-console': 'off',
+    'no-shadow': 'off',
+    'no-restricted-syntax': [
+      'error',
+      'LabeledStatement',
+      'WithStatement',
+    ],
+  },
+  overrides:[
+    {
+      files: ['*.js'],
+      excludedFiles: 'babel.config.js',
+    }
+  ]
+};
+```
+**and…**
+Don’t forget to run $ npm install when you have the package.json
+**0. Executing basic javascript with Node JS**
+In the file `#F33107 0-console.js`, create a function named displayMessage that prints in STDOUT the string argument.
+**1. Using Process stdin**
+**2. Reading a file synchronously with Node JS**
+**3. Reading a file asynchronously with Node JS**
+**4. Create a small HTTP server using Node's HTTP module**
+**5. Create a more complex HTTP server using Node's HTTP module**
+**6. Create a small HTTP server using Express**
+**7. Create a more complex HTTP server using Express**
+**8. Organize a complex HTTP server using Express**
+**8.1 Organize the structure of the server**
+**8.2 Write the App controller**
+**8.3 Write the Students controller**
+**8.4 Write the routes**
+**8.5 Write the server reusing everything you created**
+**8.6 Update package.json (if you are running it from outside the folder full_server)**
 
 ### Authors &copy;
 
