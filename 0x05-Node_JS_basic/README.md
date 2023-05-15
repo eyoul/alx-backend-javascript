@@ -465,7 +465,7 @@ If you want to add test to validate your integration, you will need to add this 
 }
 
 ```
-* File: [full_server/utils.js](./full_server/utils.js), [full_server/controllers/AppController.js](./full_server/controllers/AppController.js), [full_server/controllers/StudentsController.js](./full_server/controllers/StudentsController.js), [full_server/routes/index.js, full_server/server.js](./full_server/routes/index.js, full_server/server.js)
+* File: [full_server/utils.js](./full_server/utils.js), [full_server/controllers/AppController.js](./full_server/controllers/AppController.js), [full_server/controllers/StudentsController.js](./full_server/controllers/StudentsController.js), [full_server/routes/index.js](./full_server/routes/index.js), [full_server/server.js](./full_server/server.js)
 
 
 ### Authors &copy;
