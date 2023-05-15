@@ -139,8 +139,16 @@ module.exports = {
 **and…**
 Don’t forget to run $ npm install when you have the package.json
 **0. Executing basic javascript with Node JS**
-In the file [0-console.js]`F33107`, create a function named displayMessage that prints in STDOUT the string argument.
+In the file [F33107] `0-console.js`, create a function named `displayMessage` that prints in `STDOUT` the string argument.
 ```powershell
+bob@dylan:~$ cat 0-main.js
+const displayMessage = require('./0-console');
+
+displayMessage("Hello NodeJS!");
+
+bob@dylan:~$ node 0-main.js
+Hello NodeJS!
+bob@dylan:~$
 ``
 **1. Using Process stdin**
 **2. Reading a file synchronously with Node JS**
